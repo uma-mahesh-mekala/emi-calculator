@@ -1,42 +1,156 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  font-family: var(--font-poppins), sans-serif;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+body{
+  background-color: #f0f4f8;
+  font-family: var(--font-poppins), sans-serif;
   margin: 0;
+  padding: 2rem;
+}
+/* Page Heading */
+h1, h2 {
+  text-align: center;
+  color: #333333; /* Dark grey for text */
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+
+  /* Add soft background color */
+  background-color: #e0f7fa; /* Light cyan */
+  padding: 1rem 0;
+  border-radius: 8px;
+  background-image: linear-gradient(45deg, #e0f7fa, #ffebee); /* Light gradient for soft contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Specifically for h1 */
+h1 {
+  font-size: 2rem;
+  background-color: #ffebee; /* Light pinkish */
+  background-image: linear-gradient(45deg, #ffebee, #fff);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* Specifically for h2 */
+h2 {
+  font-size: 1.5rem;
+  background-color: #e0f7fa; /* Light cyan */
+  background-image: linear-gradient(45deg, #e0f7fa, #ffffff);
+}
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  gap: 2rem;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.loan-details,
+.loan-summary {
+  flex: 1 1 45%; /* Take ~half of the form */
+}
+
+.loan-details h2,
+.loan-summary h2 {
+  margin-bottom: 1rem;
+}
+
+.loan-details input,
+.loan-summary input {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.loan-details input:focus,
+.loan-summary input:focus {
+  border-bottom-color: #007bff; /* or any highlight color */
+}
+
+.styled {
+  border: 0;
+  margin-left: auto;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: #007bff; /* Blue to match input underline */
+  background-image: linear-gradient(
+    to top left,
+    rgb(0 0 0 / 20%),
+    rgb(0 0 0 / 20%) 30%,
+    rgb(0 0 0 / 0%)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgb(255 255 255 / 60%),
+    inset -2px -2px 3px rgb(0 0 0 / 60%);
+  margin: 2rem auto;      /* Auto-center horizontally */
+  display: block;         /* Required for margin auto on inline elements */  
+}
+
+.styled:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgb(255 255 255 / 60%),
+    inset 2px 2px 3px rgb(0 0 0 / 60%);
+}
+
+/* Responsive Styles */
+@media (max-width: 650) {
+
+  /* Specifically for h1 */
+  h1 {
+    font-size: 1rem;  /* Reduce font size of h1 */
+  }
+
+  h2 {
+    font-size: 0.5rem;  /* Reduce font size of h2 */
+  }
+  .calculator {
+    flex-direction: column;
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .loan-details,
+  .loan-summary {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .loan-details input,
+  .loan-summary input {
+    width: 100%;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .styled {
+    width: 100%;
+    padding: 0.75rem;
   }
 }
+
+
