@@ -39,7 +39,7 @@ export default function LoanDetails({
         onChange={onChange}
       />
       <Input
-        title="Term"
+        title="Term(in years)"
         type="number"
         name="term"
         id="term"
